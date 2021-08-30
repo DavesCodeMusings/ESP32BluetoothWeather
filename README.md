@@ -10,7 +10,7 @@ My first attempt at an outdoor weather sensor involved an ESP8266 and the same B
 If that's not enough, the sketch is an introduction to Bluetooth on the ESP32 that goes a little beyond, "Look Ma! I can read a GATT characteristic on my smart phone." It also offers some insight into how to deal with sensor self-heating. (And it's not by subtracting 4 degrees Celsius.)
 
 ## How does it work?
-The `setup()` function configures a Bluetooth Environmental Sensing service with characteristics for pressure, temperature, and humidit, with notifications. It also sets the BME280 for a forced read mode. This is what keeps the sensor from self-heating so much, mitigating the need to factor in a few degrees of error correction in the temperature.
+The `setup()` function configures a Bluetooth Environmental Sensing service with characteristics for pressure, temperature, and humidity, with notifications. It also sets the BME280 for a forced read mode. This is what keeps the sensor from self-heating so much, mitigating the need to factor in a few degrees of error correction in the temperature.
 
 The `loop()` function reads the BME280 data every so often and updates the BLE GATT characteristics for pressure, temperature, and humidity. It also takes care of notifying if there is a client connected.
 
